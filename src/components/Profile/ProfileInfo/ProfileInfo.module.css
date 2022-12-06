@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+}
+.info {
+  margin-left: 40px;
+}
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.avatar {
+  width: 250px;
+}

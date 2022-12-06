@@ -1,0 +1,19 @@
+.post {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 10px;
+  align-items: center;
+}
+.post:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.postAvatar {
+  width: 60px;
+  height: 60px;
+  margin-right: 16px;
+  border-radius: 50%;
+}
+
+.postText {
+}

@@ -1,0 +1,13 @@
+.navItem {
+  list-style-type: none;
+  font-size: 25px;
+  font-weight: 500;
+  color: white;
+}
+.navItem:last-child {
+  margin-top: 35px;
+}
+.navItem:hover {
+  color: grey;
+  cursor: pointer;
+}

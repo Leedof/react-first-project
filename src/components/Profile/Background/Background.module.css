@@ -1,0 +1,10 @@
+.wrapper {
+  height: 250px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.image {
+  margin-top: -300px;
+  width: 100%;
+}
