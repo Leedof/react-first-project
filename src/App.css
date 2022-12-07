@@ -10,3 +10,7 @@
     "n c ";
   background-color: rgba(128, 128, 128, 0.24);
 }
+.app-wrapper-main {
+  grid-area: c;
+  padding-bottom: 50px;
+}
