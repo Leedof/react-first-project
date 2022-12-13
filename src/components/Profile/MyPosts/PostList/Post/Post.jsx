@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Post.module.css";
 
-const Post = () => {
+const Post = ({ id, text, likesCount }) => {
   return (
     <div className={s.post}>
       <img
@@ -9,11 +9,10 @@ const Post = () => {
         alt=""
         className={s.postAvatar}
       />
-      <p className={s.postText}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae eos atque
-        odio? Ea, quae. Dicta, nam dolor blanditiis magnam laboriosam, qui sint
-        sed libero ipsa facere similique quia expedita enim?
-      </p>
+      <div className={s.postText}>
+        <p>{text}</p>
+        Likes{" " + likesCount}
+      </div>
     </div>
   );
 };

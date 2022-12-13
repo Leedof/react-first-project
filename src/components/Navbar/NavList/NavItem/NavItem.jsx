@@ -1,12 +1,15 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import s from "./NavItem.module.css";
 
 const NavItem = (props) => {
+  const setActive = ({ isActive }) => (isActive ? s.activeLink : "");
+
   return (
-    <li className={s.navItem}>
-      <a className="navItem" {...props}>
+    <li className={s.navItemLi}>
+      <NavLink to={props.to} className={setActive}>
         {props.children}
-      </a>
+      </NavLink>
     </li>
   );
 };

@@ -1,0 +1,40 @@
+.wrapper {
+  margin-top: 100px;
+}
+
+.title {
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  padding: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.listItem {
+  box-sizing: border-box;
+  flex: 1;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listItem .avatar {
+  border-radius: 50%;
+}
+
+.listItemName {
+  margin-top: 5px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: white;
+}

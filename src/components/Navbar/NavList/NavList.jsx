@@ -6,11 +6,11 @@ import s from "./NavList.module.css";
 const NavList = () => {
   return (
     <ul className={s.navList}>
-      <NavItem>Profile</NavItem>
-      <NavItem>Messages</NavItem>
-      <NavItem>News</NavItem>
-      <NavItem>Music</NavItem>
-      <NavItem>Settings</NavItem>
+      <NavItem to="/">Profile</NavItem>
+      <NavItem to="/dialogs">Messages</NavItem>
+      <NavItem to="/news">News</NavItem>
+      <NavItem to="/music">Music</NavItem>
+      <NavItem to="/settings">Settings</NavItem>
     </ul>
   );
 };

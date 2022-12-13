@@ -1,13 +1,25 @@
-.navItem {
+.navItemLi {
   list-style-type: none;
-  font-size: 25px;
-  font-weight: 500;
-  color: white;
 }
-.navItem:last-child {
+.navItemLi:not(:last-child) {
+  margin-bottom: 5px;
+}
+.navItemLi:last-child {
   margin-top: 35px;
 }
-.navItem:hover {
+
+.navItemLi a {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navItemLi a:hover {
   color: grey;
   cursor: pointer;
+}
+
+.navItemLi a.activeLink {
+  color: gold;
 }

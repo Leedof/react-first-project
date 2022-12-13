@@ -1,0 +1,25 @@
+.message:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.message {
+  background-color: rgba(0, 128, 0, 0.616);
+  /* Размер по сообщению + макс размер */
+  width: fit-content;
+  max-width: 400px;
+  /* Перенос строки */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  /* Остальное */
+  box-sizing: border-box;
+  padding: 5px 10px;
+  border-radius: 0 10px 10px 10px;
+}
+
+.myMessage {
+  background-color: rgb(0, 128, 0);
+
+  margin-left: auto;
+  border-radius: 10px 0 10px 10px;
+}
