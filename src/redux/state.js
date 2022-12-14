@@ -1,5 +1,3 @@
-import { rerenderEntireDom } from "../render";
-
 const state = {
   profilePage: {
     newPostText: "",
@@ -37,6 +35,14 @@ const state = {
       { id: 4, message: "Wow, what else?", from: "me" },
     ],
   },
+};
+
+//Просто создаю переменную в глобальном контексте
+let rerenderEntireDom;
+//Нужно пробросить колбек в индекс и забрать оттуда функцию перерисовки + записать ее в переменную выше
+export const subscribe = (observe) => {
+  //когда колбек вызывается в индексе, то он как раз получает то, то нам нужно здесь. Тут мы записываем это через замыкание и исплользуем без цикличности импортов.
+  rerenderEntireDom = observe;
 };
 
 // Добавление нового поста
