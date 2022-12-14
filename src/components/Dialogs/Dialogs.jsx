@@ -4,13 +4,18 @@ import DialogsList from "./DialogsList/DialogsList";
 import Message from "./MessagesSection/MessageList/Message/Message";
 import MessagesSection from "./MessagesSection/MessagesSection";
 
-const Dialogs = ({ data }) => {
-  const { dialogs, messages } = data;
+const Dialogs = ({ data, addMessage, updateNewMessageText }) => {
+  const { dialogs, messages, newMessageText } = data;
 
   return (
     <div className={s.dialogs}>
       <DialogsList dialogs={dialogs} />
-      <MessagesSection messages={messages} />
+      <MessagesSection
+        messages={messages}
+        newMessageText={newMessageText}
+        addMessage={addMessage}
+        updateNewMessageText={updateNewMessageText}
+      />
     </div>
   );
 };

@@ -9,7 +9,13 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 
-const App = ({ state }) => {
+const App = ({
+  state,
+  addPost,
+  updateNewPostText,
+  addMessage,
+  updateNewMessageText,
+}) => {
   const { profilePage, dialogsPage } = state;
 
   return (
@@ -19,8 +25,26 @@ const App = ({ state }) => {
         <Navbar />
         <main className="app-wrapper-main">
           <Routes>
-            <Route path="/" element={<Profile data={profilePage} />} />
-            <Route path="/dialogs/*" element={<Dialogs data={dialogsPage} />} />
+            <Route
+              path="/"
+              element={
+                <Profile
+                  data={profilePage}
+                  addPost={addPost}
+                  updateNewPostText={updateNewPostText}
+                />
+              }
+            />
+            <Route
+              path="/dialogs/*"
+              element={
+                <Dialogs
+                  data={dialogsPage}
+                  addMessage={addMessage}
+                  updateNewMessageText={updateNewMessageText}
+                />
+              }
+            />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />

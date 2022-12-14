@@ -1,5 +1,8 @@
+import { rerenderEntireDom } from "../render";
+
 const state = {
   profilePage: {
+    newPostText: "",
     posts: [
       { id: 1, text: "Hello,this is my first entry!", likesCount: 2 },
       { id: 2, text: "Today is a good day to make second post", likesCount: 0 },
@@ -13,6 +16,7 @@ const state = {
     ],
   },
   dialogsPage: {
+    newMessageText: "",
     dialogs: [
       { id: 1, name: "Maksym" },
       { id: 2, name: "Tanya" },
@@ -33,6 +37,38 @@ const state = {
       { id: 4, message: "Wow, what else?", from: "me" },
     ],
   },
+};
+
+// Добавление нового поста
+export const addPost = () => {
+  state.profilePage.posts.push({
+    id: state.profilePage.posts.length,
+    text: state.profilePage.newPostText,
+    likesCount: 0,
+  });
+  state.profilePage.newPostText = "";
+  rerenderEntireDom(state);
+};
+// Отслеживание изменения в textarea постов
+export const updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireDom(state);
+};
+
+// Добавление нового сообщение в диалогах
+export const addMessage = () => {
+  state.dialogsPage.messages.push({
+    id: state.dialogsPage.messages.length,
+    message: state.dialogsPage.newMessageText,
+    from: "me",
+  });
+  state.dialogsPage.newMessageText = "";
+  rerenderEntireDom(state);
+};
+// Отслеживание изменения в textarea сообщений
+export const updateNewMessageText = (newMessage) => {
+  state.dialogsPage.newMessageText = newMessage;
+  rerenderEntireDom(state);
 };
 
 export default state;

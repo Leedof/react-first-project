@@ -1,12 +1,16 @@
 import React from "react";
 import s from "./PostCreation.module.css";
 
-const PostCreation = () => {
+const PostCreation = (props) => {
   const newPostElement = React.createRef();
 
   const addPost = () => {
+    props.addPost();
+  };
+
+  const onPostChange = () => {
     const text = newPostElement.current.value;
-    alert(text);
+    props.updateNewPostText(text);
   };
 
   return (
@@ -16,7 +20,9 @@ const PostCreation = () => {
         rows="5"
         className={s.text}
         ref={newPostElement}
-      ></textarea>
+        value={props.newPostText}
+        onChange={onPostChange}
+      />
       <button onClick={addPost} className={s.btn}>
         Add post
       </button>
