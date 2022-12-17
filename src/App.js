@@ -9,13 +9,7 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 
-const App = ({
-  state,
-  addPost,
-  updateNewPostText,
-  addMessage,
-  updateNewMessageText,
-}) => {
+const App = ({ state, dispatch }) => {
   const { profilePage, dialogsPage } = state;
 
   return (
@@ -27,23 +21,11 @@ const App = ({
           <Routes>
             <Route
               path="/"
-              element={
-                <Profile
-                  data={profilePage}
-                  addPost={addPost}
-                  updateNewPostText={updateNewPostText}
-                />
-              }
+              element={<Profile data={profilePage} dispatch={dispatch} />}
             />
             <Route
               path="/dialogs/*"
-              element={
-                <Dialogs
-                  data={dialogsPage}
-                  addMessage={addMessage}
-                  updateNewMessageText={updateNewMessageText}
-                />
-              }
+              element={<Dialogs data={dialogsPage} dispatch={dispatch} />}
             />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
