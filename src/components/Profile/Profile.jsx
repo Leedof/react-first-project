@@ -1,16 +1,16 @@
 import React from "react";
 import Background from "./Background/Background";
-import MyPosts from "./MyPosts/MyPosts";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 // import s from "./Profile.module.css";
 
-const Profile = ({ data, dispatch }) => {
+const Profile = () => {
   return (
     <div>
       <Background />
       <ProfileInfo />
-      <MyPosts data={data} dispatch={dispatch} />
+      <MyPostsContainer />
     </div>
   );
 };

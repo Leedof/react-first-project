@@ -1,16 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import App from "./App.js";
-import store from "./redux/state.js";
+import store from "./redux/store.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-export const rerenderEntireDom = (state) => {
-  root.render(<App state={state} dispatch={store.dispatch.bind(store)} />);
+export const rerenderEntireDom = () => {
+  root.render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
 };
 
-// Отдаю в стейт функцие перерисовки
-store.subscribe(rerenderEntireDom);
-
 //Первый раз рисую ДОМ
-rerenderEntireDom(store.getState());
+rerenderEntireDom();

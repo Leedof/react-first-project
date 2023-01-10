@@ -1,20 +1,16 @@
 import React from "react";
 import s from "./MessageCreation.module.css";
-import {
-  addMessageActionCreator,
-  updateNewMessageTextActionCreator,
-} from "../../../../redux/dialogsReducer";
 
 const MessageCreation = (props) => {
   const newMessageElement = React.createRef();
 
-  const addMessage = () => {
-    props.dispatch(addMessageActionCreator());
+  const onAddMessage = () => {
+    props.sendMessage();
   };
 
   const onMessageChange = () => {
     const text = newMessageElement.current.value;
-    props.dispatch(updateNewMessageTextActionCreator(text));
+    props.updateNewMessageText(text);
   };
 
   return (
@@ -28,7 +24,7 @@ const MessageCreation = (props) => {
         onChange={onMessageChange}
       />
       <br />
-      <button className={s.btn} onClick={addMessage}>
+      <button className={s.btn} onClick={onAddMessage}>
         Send message
       </button>
     </div>
